@@ -7,10 +7,9 @@ const Users = db.define( "users", {
         primaryKey: true
     },
     profileImage:{
-        type:DataTypes.STRING,
-        defaultValue: "https://image-exmple.com/img.jpg"
+        type:DataTypes.STRING
     },
-    firsName:{
+    firstName:{
         type: DataTypes.STRING,
         allowNull: false
     },

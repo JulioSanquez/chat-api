@@ -10,9 +10,9 @@
 //* }
 
 //? Para respuestas exitosas
-const success = ({status, data, message, res, error = false}) => {
+const success = ({status, data, message, res}) => {
     res.status(status).json({
-        error,
+        error:false,
         status,
         message,
         data
@@ -20,12 +20,14 @@ const success = ({status, data, message, res, error = false}) => {
 }
 
 //! Para respuestas de errores
-const error = ({status, fields, message, res, error = true}) => {
+const error = ({status, data, fields, message, res}) => {
+    console.log(data)
     res.status(status).json({
-        error,
+        error:true,
         status,
         message,
-        fields
+        fields,
+        data
     })
 }
 

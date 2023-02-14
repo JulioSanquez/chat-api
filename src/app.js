@@ -18,8 +18,10 @@ db.sync()
 
 referencesInit()
 
+app.use( express.json() )
+
 app.get( '/', (req, res) => {    
-    resHandlers.succes({
+    resHandlers.success({
         res,
         status: 200,
         message: 'Servidor inicializado correctamente',

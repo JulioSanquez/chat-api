@@ -17,6 +17,7 @@ const findUserById = async ( id ) => {
 }
 
 const createUser = async ( userObj ) => {
+    console.log(userObj)
     const newUser = {
         id: uuid(),
         firstName : userObj.firstName,
@@ -27,6 +28,7 @@ const createUser = async ( userObj ) => {
         phone : userObj.phone
     }
     const data = await Users.create(newUser)
+    console.log(data)
     return data
 }
 

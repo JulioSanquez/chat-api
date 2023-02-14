@@ -13,22 +13,22 @@ const fields = {
 
 const getAllUsers = (req, res) => {
     usersControllers.findAllUsers()
-        .then(data => {
-            responses.success({
-                    status: 200,
-                    data: data,
-                    message: 'Getting all Users',
-                    res
-                })
-        })
-        .catch(err => {
-            responses.error({
-                    status: 400,
-                    data: err,
-                    message: 'Something bad getting all users',
-                    res
-                })
-        })
+      .then(data => {
+          responses.success({
+                  status: 200,
+                  data: data,
+                  message: 'Getting all Users',
+                  res
+              })
+      })
+      .catch(err => {
+        responses.error({
+            status: 400,
+            data: err,
+            message: 'Something bad getting all users',
+            res
+          })
+      })
 }
 
 const getUserById = (req ,res) => {
@@ -59,25 +59,26 @@ const getUserById = (req ,res) => {
 }
 
 const postUser = (req, res) => {
-    const userObj = req.body
-    usersControllers.createNewUser(userObj)
-      .then(data => {
-        responses.success({
-          status: 201,
-          data,
-          message: `User created succesfully with id: ${data.id}`,
-          res
-        })
-      })
-      .catch(err => {
-        responses.error({
-          status: 400,
-          data: err,
-          message: 'Error ocurred trying to create a new user',
-          res,
-          fields
-        })
-      })
+  const userObj = req.body
+  console.log(req.body)
+  usersControllers.createUser(userObj)
+  .then(data => {
+    responses.success({
+      status: 201,
+      data,
+      message: `User created succesfully with id: ${data.id}`,
+      res
+    })
+  })
+  .catch(err => {
+    responses.error({
+      data: err,
+      status: 400,
+      message: 'Error ocurred trying to create a new user',
+      res,
+      fields
+    })
+  })
 }
 
 const patchUser = (req, res) => {
