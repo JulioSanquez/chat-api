@@ -1,32 +1,55 @@
 
-[x]-Manejar Usuarios
-[x]-Inicio de sesion
-[x]-Crear conversaciones
-[x]-Leer las conversaciones de las cuales son miembros
-[x]-Crear grupos de conversacion
-[x]-Enviar mensajes
-[x]-Eliminar mensajes
 
--Confirmacion de lectura del mensaje
--Manejar fotos de perfil
--Reenviar un mensaje
--Crear link de invitacion
+[X] Manejar usuarios
+[X] Esos usarios puedan inicar sesion 
+[X] Crear conversaciones
+[X] Leer las conversaciones de las cuales son miembros
+[X] Crear grupos de conversaciones 
+[X] Enviar mensajes 
+[X] Eliminar mensajes 
+
+- Confirmacion de lectura del mensaje 
+- Manejar fotos de perfil 
+- Reenviar un mensaje 
+- Crear links para invitar gente a un grupo
 
 ![Database Diagram](https://i.imgur.com/IHhtWv2.png)
 
-Autenticacion:
-    - Log In
-    - Sign In
 
-Cuando hacemos un login recibimoslo siguiente:
+Ejemplo de respuestas exitosas: 
+
+```JavaScript
+{
+    error: false,
+    status: 201,
+    message: 'User created Succesfully',
+    data: {
+        id: 5,
+        firstName: 'Sahid',
+        ...
+    }
+}
+```
+Autenticacion
+- Log In
+- Sign In
+- Recovery Password 
+id
+userId
+used true
+- Verify Account 
+
+Cuando hacemos un login recibimos lo siguiente
     - Email
     - Password
 
-Validar si el usuario existe:
-    - Vamos a buscar el usuario al que le pertenezca el correo electoronico que recibimos
+    - POST 
 
-Validar si lacontraseña es correcta:
-    - Validar la contraseña que recibimos con la contraseña que está en mi base de datos
+Validar si el usuario existe
+    - Vamos a buscar el usuario al que le pertenezca el correo electronico que recibimos
+
+Validar si la contraseña es correcta
+    - Validando la contraseña que recibimos con la contraseña que esta en mi base de datos
 
 Generar una respuesta con el token
 
